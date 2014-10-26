@@ -24,10 +24,10 @@ Instructions below assume you have followed the README instructions to download 
 * run_analysis.R: is the R script to generate the file tidyData.txt 
 * tidyData.txt: is the output file generated from executing run_analysis.R
 
-## tidyData.txt Variable Descriptions
+# tidyData.txt Variable Information
 Variable names from the original data specified in features.txt were transformed generally following the rules in [Google's R Style Guide](https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).  
 
-Each variable is a measure of an activity described in features_info.txt and it's original name was preserved (e.g. tBodyAcc).  The tidy data contains a subset of variables that matched the expressions: std, mean, meanFreq.  This is denoted in the second part of the variable name.  Lastly, if the variable was measured for one of three axial signals, it will be denoted by x, y, or z.  All feature variables will have the form: `partialOrigName.[mean|std|meanFreq].[x|y|z]*`.  Features are normalized and bounded within [-1,1].
+Each feature is a measure of an variable described in features_info.txt and it's original name was mostly preserved (e.g. tBodyAcc).  The tidy data contains a subset of variables that matched the expressions: std, mean, meanFreq.  This is denoted in the second part of the variable name.  Lastly, if the variable was measured for one of three axial signals, it will be denoted by x, y, or z.  All feature variables will have the form: `partialOrigName.[mean|std|meanFreq].[x|y|z]*`.  Features were normalized and bounded within [-1,1]. 
 
 A column for subject was added, where subject is a ID numeric as specified in subject_*.txt files.
 
@@ -38,6 +38,8 @@ Columns for activity.name were added by mapping the activity ID in y_*.txt files
 * sitting
 * standing 
 * laying
+
+The values of the measurement variables in the tidy dataset were calculated by averaging each retained original measurement variable for each activity and each subject.  In other words, each non-categorical data field contains a mean value bounded within [-1,1].
 
 Following is a list of all variable names in the tidyData.txt data set:
 
