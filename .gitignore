@@ -1,3 +1,4 @@
+
 # History files
 .Rhistory
 
@@ -9,3 +10,6 @@
 
 # RStudio files
 .Rproj.user/
+
+# Data files
+UCI HAR Dataset/
